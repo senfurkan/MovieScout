@@ -32,6 +32,8 @@ export default createVuetify({
   },
   locale: {
     locale: "tr",
+    fallback: "en",
+    messages: { tr },
   },
   date: {
     locale: {
