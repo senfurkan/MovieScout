@@ -3,11 +3,18 @@ import { trendingAll } from "@/api";
 import { Trending } from "@/types/Trending/Index";
 
 export function useTrending() {
+  const filtering = ref("day")
+
+  const filteringList = [
+    { text: "Günlük", value: "day" },
+    { text: "Haftalık", value: "week" },
+  ];
+
   const lists = ref<Trending[]>([]);
   const isLoading = ref(false);
-  const trending = () => {
+  const trending = (item: string) => {
     isLoading.value = true;
-    trendingAll("day")
+    trendingAll(item)
       .then((response) => {
         lists.value = response?.data?.results;
       })
@@ -22,6 +29,8 @@ export function useTrending() {
 
   return {
     isLoading,
+    filtering,
+    filteringList,
     lists,
     trending,
   };
