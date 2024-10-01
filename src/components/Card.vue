@@ -14,7 +14,7 @@
           <v-card-subtitle>
             <v-icon
               :icon="
-                item.media_type == 'tv' ? 'mdi-television-box' : 'mdi-movie'
+                item.media_type == 'tv' ? 'mdi-television-box' : 'mdi-movie-open'
               "
             ></v-icon>
             <v-icon color="error" icon="mdi-fire-circle" size="small"></v-icon>
@@ -57,16 +57,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, onMounted } from "vue";
 import { Trending } from "@/types/Trending/Index";
 
 const props = defineProps<{
   items: Trending[];
 }>();
 
-onMounted(() => {
-  console.log("items", props.items);
-});
 </script>
 
 <style scoped>
