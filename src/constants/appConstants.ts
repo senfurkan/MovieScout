@@ -10,10 +10,10 @@ export const HTTP_STATUS = {
   };
   
   export const NavBar = {
-    HOME_VIEW: {
+    /* HOME_VIEW: {
       path: "/home",
       name: "Anasayfa",
-    },
+    }, */
     /* SEARCH_FOR_A_MOVIE: {
       path: "/search-for-a-movie",
       name: "Film Ara",

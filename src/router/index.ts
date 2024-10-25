@@ -7,14 +7,14 @@ import Trending from "@/pages/Trending/Index.vue";
 const routes = [
   {
     path: "/",
-    redirect: NavBar.HOME_VIEW.path,
+    redirect:  NavBar.TRENDS.path,
     component: Default,
     children: [
-      {
+      /* {
         path: NavBar.HOME_VIEW.path,
         name: NavBar.HOME_VIEW.name,
         component: Home,
-      },
+      }, */
       /* {
         path: NavBar.SEARCH_FOR_A_MOVIE.path,
         name: NavBar.SEARCH_FOR_A_MOVIE.name,
