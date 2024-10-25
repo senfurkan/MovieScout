@@ -7,7 +7,9 @@
       :select-items="filteringList"
     />
     <Tab v-model:tab="tab" :tab-items="tabList" />
-    <Card :items="lists" />
+
+    <Card v-if="tab != 'person'" :items="lists as Trending[]" />
+    <PersonCard v-else :items="lists as Person[]" />
   </template>
 </template>
 
@@ -18,6 +20,9 @@ import Title from "@/components/Title.vue";
 import ProgressCircular from "@/components/ProgressCircular.vue";
 import Tab from "@/components/Tab.vue";
 import Card from "@/components/Card.vue";
+import PersonCard from "@/components/PersonCard.vue";
+import { Trending } from "@/types/Trending/Index";
+import { Person } from "@/types/Trending/person";
 
 const { isLoading, filtering, tab, tabList, filteringList, lists, trending } =
   useTrending();
